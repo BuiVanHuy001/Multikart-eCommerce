@@ -1,6 +1,5 @@
-
 if ($(window).width() > '576') {
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('#sticky-header').addClass("sticky");
         } else {
@@ -9,7 +8,7 @@ if ($(window).width() > '576') {
     });
 }
 if ($(window).width() < '576') {
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 150) {
             $('#sticky-header').addClass("stickycls");
         } else {

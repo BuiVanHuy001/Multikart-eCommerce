@@ -7,9 +7,12 @@
             buttonSelector: ".edit",
             maintainWidth: true,
             dropdowns: {},
-            edit: function () {},
-            save: function () {},
-            cancel: function () {}
+            edit: function () {
+            },
+            save: function () {
+            },
+            cancel: function () {
+            }
         };
 
     function editable(element, options) {
@@ -75,7 +78,8 @@
                         $('<option></option>')
                             .text(instance.options.dropdowns[field][i])
                             .appendTo(input);
-                    };
+                    }
+                    ;
 
                     input.val(value)
                         .data('old-value', value)

@@ -51,7 +51,8 @@ var customcard = {
                 e.querySelector();
                 e.clearSelection();
             });
-            clipboard.on('error', function (e) {});
+            clipboard.on('error', function (e) {
+            });
         });
         $(".rtl .card-header-left .close-card").on('click', function () {
             var $this = $(this);

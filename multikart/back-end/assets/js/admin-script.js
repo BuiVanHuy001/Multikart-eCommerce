@@ -35,6 +35,7 @@ function toggleFullScreen() {
         }
     }
 }
+
 (function ($, window, document, undefined) {
     "use strict";
     var $ripple = $(".js-ripple");

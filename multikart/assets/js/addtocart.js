@@ -1,7 +1,7 @@
 /*=====================
  24. add to cart sidebar js
  ==========================*/
- function openCart() {
+function openCart() {
     document.getElementById("cart_side").classList.add('open-side');
 }
 

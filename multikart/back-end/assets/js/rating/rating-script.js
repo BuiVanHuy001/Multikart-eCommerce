@@ -1,9 +1,9 @@
 'use strict';
-$(function() {
+$(function () {
     function ratingEnable() {
         var currentRating = $('#u-rating-fontawesome-o').data('current-rating');
         $('.stars-example-fontawesome-o .current-rating').find('span').html(currentRating);
-        $('.stars-example-fontawesome-o .clear-rating').click( function(event) {
+        $('.stars-example-fontawesome-o .clear-rating').click(function (event) {
             event.preventDefault();
             $('#u-rating-fontawesome-o').barrating('clear');
         });
@@ -11,7 +11,7 @@ $(function() {
             theme: 'fontawesome-stars-o',
             showSelectedRating: false,
             initialRating: currentRating,
-            onSelect: function(value, text) {
+            onSelect: function (value, text) {
                 if (!value) {
                     $('#u-rating-fontawesome-o').barrating('clear');
                 } else {
@@ -19,21 +19,23 @@ $(function() {
                     $('.stars-example-fontawesome-o .your-rating').removeClass('hidden').find('span').html(value);
                 }
             },
-            onClear: function(value, text) {
+            onClear: function (value, text) {
                 $('.stars-example-fontawesome-o').find('.current-rating').removeClass('hidden').end().find('.your-rating').addClass('hidden');
             }
         });
     }
+
     function ratingDisable() {
         $('select').barrating('destroy');
     }
-    $('.rating-enable').click(function(event) {
+
+    $('.rating-enable').click(function (event) {
         event.preventDefault();
         ratingEnable();
         $(this).addClass('deactivated');
         $('.rating-disable').removeClass('deactivated');
     });
-    $('.rating-disable').click(function(event) {
+    $('.rating-disable').click(function (event) {
         event.preventDefault();
         ratingDisable();
         $(this).addClass('deactivated');

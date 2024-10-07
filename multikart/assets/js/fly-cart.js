@@ -1,7 +1,7 @@
 $('.cart-info button').on('click', function () {
-    if($(window).width() > 576){
+    if ($(window).width() > 576) {
         var cart = $('.addcart_btm_popup');
-    }else{
+    } else {
         var cart = $('.mobile-cart .icon-shopping-cart');
     }
     var imgtodrag = $(this).parents('.product-box').find(".front .bg-size, .front img").eq(0);

@@ -1,40 +1,41 @@
 "use strict";
 var ecommerce_product = {
-    init: function() {
+    init: function () {
         var sync1 = $("#sync1");
         var sync2 = $("#sync2");
         var slidesPerPage = 4;
         var syncedSecondary = true;
         sync1.owlCarousel({
-            items : 1,
-            slideSpeed : 2000,
+            items: 1,
+            slideSpeed: 2000,
             nav: false,
             autoplay: true,
             dots: false,
             loop: true,
-            responsiveRefreshRate : 200
+            responsiveRefreshRate: 200
         }).on('changed.owl.carousel', syncPosition);
         sync2
             .on('initialized.owl.carousel', function () {
                 sync2.find(".owl-item").eq(0).addClass("current");
             })
             .owlCarousel({
-                items : slidesPerPage,
+                items: slidesPerPage,
                 dots: false,
                 nav: false,
                 smartSpeed: 200,
-                slideSpeed : 500,
+                slideSpeed: 500,
                 slideBy: slidesPerPage,
-                responsiveRefreshRate : 100,
+                responsiveRefreshRate: 100,
                 margin: 15
             }).on('changed.owl.carousel', syncPosition2);
+
         function syncPosition(el) {
-            var count = el.item.count-1;
-            var current = Math.round(el.item.index - (el.item.count/2) - .5);
-            if(current < 0) {
+            var count = el.item.count - 1;
+            var current = Math.round(el.item.index - (el.item.count / 2) - .5);
+            if (current < 0) {
                 current = count;
             }
-            if(current > count) {
+            if (current > count) {
                 current = 0;
             }
             sync2
@@ -52,19 +53,21 @@ var ecommerce_product = {
                 sync2.data('owl.carousel').to(current - onscreen, 100, true);
             }
         }
+
         function syncPosition2(el) {
-            if(syncedSecondary) {
+            if (syncedSecondary) {
                 var number = el.item.index;
                 sync1.data('owl.carousel').to(number, 100, true);
             }
         }
-        sync2.on("click", ".owl-item", function(e){
+
+        sync2.on("click", ".owl-item", function (e) {
             e.preventDefault();
             var number = $(this).index();
             sync1.data('owl.carousel').to(number, 300, true);
         });
     }
 };
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
     ecommerce_product.init();
 });

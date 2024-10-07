@@ -1,4 +1,3 @@
-
 window.onload = function () {
     let sky = document.querySelector('#img-bg'),
         elemOne = document.querySelector('#img-1'),

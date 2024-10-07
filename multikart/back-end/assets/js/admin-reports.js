@@ -36,8 +36,10 @@ Chart.defaults.global = {
     tooltipCaretSize: 8,
     tooltipCornerRadius: 6,
     tooltipXOffset: 5,
-    onAnimationProgress: function () { },
-    onAnimationComplete: function () { }
+    onAnimationProgress: function () {
+    },
+    onAnimationComplete: function () {
+    }
 };
 var lineGraphData = {
     labels: ["1 min.", "10 min.", "20 min.", "30 min.", "40 min.", "50 min."],
